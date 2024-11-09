@@ -9,6 +9,7 @@ import {
 import { Box, Button, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../../entities/task/model/tasksSlice";
+import styles from "./AddTask.module.scss";
 
 const AddTask: FC = () => {
   const dispatch = useDispatch();
@@ -38,12 +39,23 @@ const AddTask: FC = () => {
 
   return (
     <Box
+      className={styles.boxAdd}
       component="form"
-      sx={{ "& > :not(style)": { m: 1, width: "100%" } }}
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        paddingBottom: "15px",
+        borderBottom: "1px solid whitesmoke",
+        marginBottom: "20px",
+        "& > :not(style)": { m: 1, width: "100%" },
+      }}
       noValidate
       autoComplete="off"
     >
       <TextField
+        className={styles.textFiled}
+        sx={{ padding: "10px" }}
         id="outlined-basic"
         label="Добавить задачу..."
         variant="outlined"
@@ -52,7 +64,9 @@ const AddTask: FC = () => {
         onKeyDown={handleKeyDown}
       />
       <Button
-        style={{ width: "100px" }}
+        //className={styles.buttonAdd}
+        //не применятся стили через клас
+        sx={{ maxWidth: "fit-content", padding: "10px" }}
         variant="outlined"
         onClick={handleAddNewTask}
       >

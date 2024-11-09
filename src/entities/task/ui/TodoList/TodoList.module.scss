@@ -3,26 +3,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-
-.completed {
-  text-decoration: line-through;
-  color: grey;
-}
-
-.stack {
+  width: 70vw;
   background-color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   padding: 15px;
-  width: 70%;
 }
 
-.todoCard:hover {
-  border: 1px solid skyblue;
+.stack {
+  width: 100%;
+  //background-color: rgb(43, 226, 217);
 }
 
-.title {
-  margin: 0 !important;
-}
+// box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

@@ -1,20 +1,21 @@
-import { FC } from "react";
+import { FC, memo, useContext, useState } from "react";
 import { useSelector } from "react-redux";
+
 import { List, Stack, Typography } from "@mui/material";
 
 import { RootState } from "../../../../app/store.ts";
 import { AddTask } from "../../../../features/addTask/index.ts";
 import { TodoItem } from "../TodoItem/index.ts";
-import "./TodoList.modules.scss";
+import styles from "./TodoList.module.scss";
 
 const TodoList: FC = () => {
   const { tasks } = useSelector((state: RootState) => state.tasks);
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <AddTask />
       <Stack
-        className="stack"
+        className={styles.stack}
         direction="column"
         spacing={2}
         sx={{
@@ -22,18 +23,16 @@ const TodoList: FC = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" gutterBottom>
-          {`Количество задач: ${tasks.length}`}
-        </Typography>
+        <h4>{`Количество задач: ${tasks.length}`}</h4>
         <List
-          className="list"
           sx={{
             justifyContent: "center",
             alignItems: "center",
+            width: "100%",
           }}
         >
           {tasks.map((task) => (
-            <TodoItem task={task}></TodoItem>
+            <TodoItem key={task.id} task={task}></TodoItem>
           ))}
         </List>
       </Stack>
@@ -41,4 +40,4 @@ const TodoList: FC = () => {
   );
 };
 
-export default TodoList;
+export default memo(TodoList);

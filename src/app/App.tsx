@@ -1,13 +1,16 @@
 import { FC } from "react";
 import { Provider } from "react-redux";
+
 import { TodoPage } from "../pages/TodoPage";
 import { store } from "./store";
-import "./App.css";
+import { ThemeContextProvider } from "../shared/context/themeContext";
 
 const App: FC = () => {
   return (
     <Provider store={store}>
-      <TodoPage />
+      <ThemeContextProvider>
+        <TodoPage />
+      </ThemeContextProvider>
     </Provider>
   );
 };

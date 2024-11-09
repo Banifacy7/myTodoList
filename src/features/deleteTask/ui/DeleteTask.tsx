@@ -1,11 +1,10 @@
 import { FC, memo, useCallback } from "react";
-
-import { removeTask } from "../../../entities/task/model/tasksSlice";
+import { useDispatch } from "react-redux";
 
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import "./DeleteTask.modules.scss";
 import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
+
+import { removeTask } from "../../../entities/task/model/tasksSlice";
 
 const DeleteTask: FC<{ id: string }> = ({ id }) => {
   const dispatch = useDispatch();
