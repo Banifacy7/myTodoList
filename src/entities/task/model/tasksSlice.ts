@@ -7,7 +7,7 @@ const initialState: TasksState = {
   tasks: [
     {
       id: "1",
-      title: "Подъем в 6 утра",
+      title: "Подъём в 6 утра",
       completed: false,
     },
     {
