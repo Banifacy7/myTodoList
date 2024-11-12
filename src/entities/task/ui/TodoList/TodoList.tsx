@@ -1,7 +1,6 @@
-import { FC, memo, useContext, useState } from "react";
+import { FC, memo } from "react";
 import { useSelector } from "react-redux";
-
-import { List, Stack, Typography } from "@mui/material";
+import { List, Stack } from "@mui/material";
 
 import { RootState } from "../../../../app/store.ts";
 import { AddTask } from "../../../../features/addTask/index.ts";
@@ -23,7 +22,7 @@ const TodoList: FC = () => {
           alignItems: "center",
         }}
       >
-        <h4>{`Количество задач: ${tasks.length}`}</h4>
+        <h3>{`Количество задач: ${tasks.length}`}</h3>
         <List
           sx={{
             justifyContent: "center",

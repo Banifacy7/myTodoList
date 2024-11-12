@@ -7,18 +7,18 @@ const initialState: TasksState = {
   tasks: [
     {
       id: "1",
-      title: "Тестовое задание",
+      title: "Подъем в 6 утра",
       completed: false,
     },
     {
       id: "2",
-      title: "Прекрасныый код",
+      title: "Пробежка",
       completed: false,
     },
     {
       id: "3",
-      title: "Покрытый тестами",
-      completed: false,
+      title: "Создать TodoList",
+      completed: true,
     },
   ],
 };

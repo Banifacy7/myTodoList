@@ -6,8 +6,9 @@ import {
   useState,
   KeyboardEvent,
 } from "react";
-import { Box, Button, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
+import { Box, Button, TextField } from "@mui/material";
+
 import { addTask } from "../../../entities/task/model/tasksSlice";
 import styles from "./AddTask.module.scss";
 
@@ -48,14 +49,13 @@ const AddTask: FC = () => {
         paddingBottom: "15px",
         borderBottom: "1px solid whitesmoke",
         marginBottom: "20px",
-        "& > :not(style)": { m: 1, width: "100%" },
+        "& > :not(style)": { m: 1, width: "100%", height: "56px" },
       }}
       noValidate
       autoComplete="off"
     >
       <TextField
         className={styles.textFiled}
-        sx={{ padding: "10px" }}
         id="outlined-basic"
         label="Добавить задачу..."
         variant="outlined"
@@ -64,8 +64,6 @@ const AddTask: FC = () => {
         onKeyDown={handleKeyDown}
       />
       <Button
-        //className={styles.buttonAdd}
-        //не применятся стили через клас
         sx={{ maxWidth: "fit-content", padding: "10px" }}
         variant="outlined"
         onClick={handleAddNewTask}
@@ -77,4 +75,3 @@ const AddTask: FC = () => {
 };
 
 export default memo(AddTask);
-// убрать дубликаты

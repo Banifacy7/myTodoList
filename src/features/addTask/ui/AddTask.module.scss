@@ -17,6 +17,10 @@
 
 .textFiled {
   width: 60%;
+
+  & label {
+    padding-left: 10px;
+  }
 }
 
 .buttonAdd {

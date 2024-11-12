@@ -9,9 +9,9 @@ import {
   useState,
 } from "react";
 
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+
 import { ThemeMode } from "../types/ThemeTypes";
-import { createTheme } from "@mui/system";
-import { CssBaseline, ThemeProvider } from "@mui/material";
 
 const ThemeContext = createContext({
   toggleTheme: () => {},
